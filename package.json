@@ -1,0 +1,32 @@
+{
+  "name": "judgment-candidate-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RightChoiceorNot/judgment-candidate-db.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RightChoiceorNot/judgment-candidate-db/issues"
+  },
+  "homepage": "https://github.com/RightChoiceorNot/judgment-candidate-db#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
+    "dotenv": "^17.4.2",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0",
+    "supabase": "^2.117.0",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}

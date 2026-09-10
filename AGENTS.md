@@ -63,6 +63,14 @@ Draft public data policy, disclaimer, and methodology. Inventory proposed public
 
 Stop and request explicit user approval before: importing real candidate personal data or election lists; opening anon/authenticated reads, deploying, or publishing real personal data; deleting or broadly rewriting existing data; changing a paid plan, causing charges, or downloading large historical source archives; or making any public presentation with uncertain identity, defamation, privacy, or legal risk.
 
+## 115 local-election candidate sources
+
+Use only the official Central Election Commission (CEC) website and official local election-commission sites operated in the CEC web system. Priority is: (1) CEC 115 local-election pages, notices, election bulletins, and registration information; (2) official city/county election-commission candidate pages in that system; (3) final election bulletins and formally announced candidate lists, which take precedence for any internal display.
+
+Never use media lists, party press releases, Wikipedia, social posts, or unconfirmed intention-to-run lists. Treat completed-registration lists as `provisional`/`registered`, retaining source URL, notice date, fetch time, and source type. Treat a formally announced list or election bulletin as `officially_listed`; preserve previous registration sources and record status changes such as withdrawal or exclusion.
+
+Keep source URLs configurable through source adapters, never in matching logic. Before any real-candidate import, produce a preview containing source URLs, scope, expected count, election type, district, names, party, duplicate-name and missing-field checks, plus field mapping. Then pause for explicit approval. When approved, retain URL, file hash, fetch time, and parse result for HTML/PDF/CSV/XLS/XLSX sources.
+
 ## Phase report format
 
 After each phase, report: phase goal and completion state; changed files/migrations/tables; commands actually run and results; relevant counts or integrity checks; known limits, risks, and the next step; and commit hash plus push status. Then proceed directly to the next phase unless an approval gate applies.

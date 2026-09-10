@@ -27,7 +27,7 @@ This repository builds an auditable, updateable, privacy- and legally-risk-aware
 - Local RAR/JSON source material is under ignored `storage/`.
 - Exact external-JID withdrawal reconciliation exists; its first run had zero overlaps.
 - TypeScript uses ESM (`package.json` has `"type": "module"`) and `npm run typecheck` is the standard static check.
-- The private candidate/review schema contains 19,675 official 115-year completed-registration rows. They are `registered`, not final official candidate lists; no review cases exist.
+- The private candidate/review schema contains 19,675 official 115-year completed-registration rows. They are `registered`, not final official candidate lists. Local exact-name scanning created 19,031 private `pending_review` cases; none are confirmed matches or publicly accessible.
 
 ## Phases
 

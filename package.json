@@ -10,6 +10,7 @@
     "test": "tsx --test src/**/*.test.ts",
     "preview:cec-registration": "python scripts/parse_cec_registration.py",
     "import:cec-registration": "tsx src/import-cec-candidate-registration.ts",
+    "match:local-jfull": "tsx src/match-local-jfull.ts",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck"
   },

@@ -84,4 +84,4 @@ The current pipeline uses the Judicial Yuan Open Data catalog under category `05
 
 ## Development status
 
-The private database contains 19,675 rows from the CEC's 115-year completed-registration summary PDFs. Every row is `registered`, not `officially_listed`; no review cases have been created. Phase 3 local-only matching utilities operate on `JFULL` in memory and never upload full text. Do not provide public access without explicit approval.
+The private database contains 19,675 rows from the CEC's 115-year completed-registration summary PDFs. Every row is `registered`, not `officially_listed`. Local-only matching has created private `pending_review` cases from exact name text matches; these are not identity confirmations and are not publicly accessible. `JFULL` remains local and is never uploaded. Do not provide public access without explicit approval.

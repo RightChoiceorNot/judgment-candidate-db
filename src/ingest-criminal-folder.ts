@@ -111,7 +111,8 @@ async function main() {
       case_number: `${judgment.JYEAR},${judgment.JCASE},${judgment.JNO}`,
       judgment_date: toIsoDate(judgment.JDATE),
       case_type: judgment.JCASE,
-      judgment_text: judgment.JFULL,
+      judgment_text: null,
+      full_text_available: false,
       public_status: "pending_review",
       last_seen_at: new Date().toISOString(),
     });

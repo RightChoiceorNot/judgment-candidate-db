@@ -1,10 +1,12 @@
 {
   "name": "judgment-candidate-db",
   "version": "1.0.0",
-  "description": "",
+  "description": "Private, auditable indexing and human review tooling for public Taiwanese judicial judgments.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "reconcile:deletions": "tsx src/reconcile-judgment-deletions.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck"
   },
   "repository": {
     "type": "git",
@@ -13,7 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/RightChoiceorNot/judgment-candidate-db/issues"
   },

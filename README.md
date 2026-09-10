@@ -84,4 +84,4 @@ The current pipeline uses the Judicial Yuan Open Data catalog under category `05
 
 ## Development status
 
-Phase 1 candidate/review data models are deployed with RLS and contain no candidate rows. The repository contains only a synthetic fixture. Judicial pipeline reliability is the next phase; matching, review workflows, and UI are not yet implemented. Do not import real candidate data or provide public access without explicit approval.
+Phase 2 pipeline quality checks are deployed. Phase 3 local-only matching utilities are under development; they operate on `JFULL` in memory and never upload full text. The database contains no candidate rows. Do not import real candidate data or provide public access without explicit approval.

@@ -7,6 +7,7 @@
     "reconcile:deletions": "tsx src/reconcile-judgment-deletions.ts",
     "check:pipeline": "tsx src/check-pipeline-quality.ts",
     "plan:historical-months": "tsx src/plan-historical-months.ts",
+    "test": "tsx --test src/**/*.test.ts",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck"
   },

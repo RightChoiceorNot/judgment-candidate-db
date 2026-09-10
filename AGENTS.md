@@ -19,7 +19,7 @@ This repository builds an auditable, updateable, privacy- and legally-risk-aware
 
 ## Current baseline
 
-- Remote Supabase migrations are pushed through `20260910033124`.
+- Remote Supabase migrations are pushed through `20260910075339`.
 - `source_resources`: about 367 rows; `judgment_deletions`: about 5,053 rows.
 - `raw_judgments`: 37,233 metadata-only criminal judgment indexes for `202606`.
 - Judgment full text is absent from Supabase: `judgment_text` is null and `full_text_available` is false.
@@ -28,6 +28,7 @@ This repository builds an auditable, updateable, privacy- and legally-risk-aware
 - Exact external-JID withdrawal reconciliation exists; its first run had zero overlaps.
 - TypeScript uses ESM (`package.json` has `"type": "module"`) and `npm run typecheck` is the standard static check.
 - The private candidate/review schema contains 19,675 official 115-year completed-registration rows. They are `registered`, not final official candidate lists. Local exact-name scanning created 19,031 private `pending_review` cases; none are confirmed matches or publicly accessible.
+- The private review workflow records every manual decision with its prior status, reviewer, timestamp, reason, and optional evidence source. No manual decisions or review events have been recorded yet. Use the restricted `review:decide` backend command only after a reviewer has made a documented decision for a specific case.
 
 ## Phases
 

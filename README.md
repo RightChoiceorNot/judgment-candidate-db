@@ -38,6 +38,7 @@ Do not commit this file. The repository ignores `.env` and `storage/`.
 | Judgment index | Metadata-only indexes; no `JFULL` | `raw_judgments` |
 | Withdrawal ledger | Source-provided removed judgment identifiers | `judgment_deletions` |
 | Withdrawal audit | Exact-JID match record and reconciliation run | `judgment_deletion_marks`, `ingest_runs` |
+| Candidate and review ledger | Private official-source candidate records and human-review cases | `candidates`, `candidacies`, `candidate_sources`, `review_cases`, `review_events` |
 
 All current `public` tables use RLS. There are no anon or authenticated read policies. Backend scripts use the local secret only.
 
@@ -67,6 +68,13 @@ npm.cmd run check:pipeline
 # List month/fileset priorities and known size estimates; it never downloads files
 npm.cmd run plan:historical-months
 
+# Read aggregate private review-case counts; no individual records are printed
+npm.cmd run review:summary
+
+# Record one documented internal decision. This changes exactly one selected case.
+# Use only after a human reviewer has made a specific, evidence-backed decision.
+npx.cmd tsx src/record-review-decision.ts <case-id> <next-status> <reviewer> <reason> [evidence-source]
+
 # Inspect a locally downloaded month without uploading text
 npx.cmd tsx src/summarize-criminal-month.ts
 npx.cmd tsx src/estimate-criminal-month-size.ts
@@ -84,4 +92,4 @@ The current pipeline uses the Judicial Yuan Open Data catalog under category `05
 
 ## Development status
 
-The private database contains 19,675 rows from the CEC's 115-year completed-registration summary PDFs. Every row is `registered`, not `officially_listed`. Local-only matching has created private `pending_review` cases from exact name text matches; these are not identity confirmations and are not publicly accessible. `JFULL` remains local and is never uploaded. Do not provide public access without explicit approval.
+The private database contains 19,675 rows from the CEC's 115-year completed-registration summary PDFs. Every row is `registered`, not `officially_listed`. Local-only matching has created 19,031 private `pending_review` cases from exact name text matches; these are not identity confirmations and are not publicly accessible. The human-review workflow records a prior status, reviewer, timestamp, reason, and optional evidence source for each decision, and permits only defined transitions. No decisions have been recorded. `JFULL` remains local and is never uploaded. Do not provide public access without explicit approval.

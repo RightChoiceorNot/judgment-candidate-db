@@ -71,6 +71,9 @@ npm.cmd run plan:historical-months
 # Read aggregate private review-case counts; no individual records are printed
 npm.cmd run review:summary
 
+# Validate the fixture-only static frontend prototype
+npm.cmd run check:prototype
+
 # Record one documented internal decision. This changes exactly one selected case.
 # Use only after a human reviewer has made a specific, evidence-backed decision.
 npx.cmd tsx src/record-review-decision.ts <case-id> <next-status> <reviewer> <reason> [evidence-source]
@@ -93,3 +96,7 @@ The current pipeline uses the Judicial Yuan Open Data catalog under category `05
 ## Development status
 
 The private database contains 19,675 rows from the CEC's 115-year completed-registration summary PDFs. Every row is `registered`, not `officially_listed`. Local-only matching has created 19,031 private `pending_review` cases from exact name text matches; these are not identity confirmations and are not publicly accessible. The human-review workflow records a prior status, reviewer, timestamp, reason, and optional evidence source for each decision, and permits only defined transitions. No decisions have been recorded. `JFULL` remains local and is never uploaded. Do not provide public access without explicit approval.
+
+## Fixture-only frontend prototype
+
+`web/index.html` is a static prototype for the project explanation, data-source limits, methodology, review workflow, and update log. It contains a deliberately fictional review case and has no JavaScript connection to Supabase, `.env`, raw text, or personal records. It is not deployed.

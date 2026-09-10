@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="公開裁判書索引與候選人人工覆核系統的 fixture-only 原型。" />
+    <title>裁判資料覆核工作台｜原型</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#overview">裁判資料覆核工作台 <span>原型</span></a>
+      <nav aria-label="主要導覽">
+        <a href="#sources">資料來源</a><a href="#method">方法</a><a href="#workflow">覆核流程</a>
+      </nav>
+    </header>
+    <main>
+      <section id="overview" class="hero">
+        <p class="eyebrow">PRIVATE · HUMAN REVIEW REQUIRED</p>
+        <h1>把資料留下來，<br />把判斷交給人。</h1>
+        <p class="lead">這是內部流程原型。裁判書、姓名命中與候選人身分都不能直接推論為犯罪、同一人或資格判斷。</p>
+        <div class="notice"><strong>目前畫面僅為虛構 fixture。</strong> 不連接資料庫、不顯示真實候選人、不提供公開搜尋。</div>
+      </section>
+
+      <section class="metrics" aria-label="原型資料概覽">
+        <article><strong>37,233</strong><span>裁判書索引</span><small>僅 metadata；全文不入庫</small></article>
+        <article><strong>19,031</strong><span>待人工覆核</span><small>姓名命中不代表身分確認</small></article>
+        <article><strong>0</strong><span>已公開個人紀錄</span><small>沒有 anon/authenticated 讀取權限</small></article>
+      </section>
+
+      <section id="sources" class="two-column">
+        <div><p class="eyebrow">DATA SOURCES</p><h2>資料來源有層級，也有期限。</h2></div>
+        <div class="stack">
+          <article class="card"><span class="tag registered">登記完成</span><h3>中央選舉委員會公告</h3><p>保留公告網址、發布日期、抓取時間與檔案雜湊。這類資料只標示為 <code>registered</code>。</p></article>
+          <article class="card"><span class="tag official">正式名單</span><h3>選舉公報或正式候選人名冊</h3><p>作為最終顯示候選人身分的優先依據；來源更新時保留過去紀錄與異動軌跡。</p></article>
+        </div>
+      </section>
+
+      <section id="method" class="method">
+        <p class="eyebrow">METHOD</p><h2>候選人比對只建立待覆核案件</h2>
+        <ol>
+          <li><b>本機比對</b><span>只在本機 JFULL 中做姓名與別名掃描，全文不會上傳。</span></li>
+          <li><b>保留證據</b><span>保存來源 JID、檔案定位、比對原因與撤除狀態。</span></li>
+          <li><b>人工決定</b><span>每次變更都需 reviewer、時間、理由與證據來源。</span></li>
+          <li><b>公開前審查</b><span>確認身分、案件結果、確定與撤除狀態後才評估是否可呈現。</span></li>
+        </ol>
+      </section>
+
+      <section id="workflow" class="review">
+        <div><p class="eyebrow">REVIEW CASE · FIXTURE</p><h2>人工覆核工作流</h2><p>範例資料純屬虛構，用於檢查介面與狀態呈現。</p></div>
+        <article class="case-card">
+          <div class="case-header"><span class="tag pending">待人工覆核</span><span>案例 F-0001</span></div>
+          <h3>虛構候選人甲</h3><p>地方職務／示範選區／無黨籍</p>
+          <dl><dt>比對原因</dt><dd>本機全文出現同名文字</dd><dt>來源狀態</dt><dd>尚未確認身分、案件結果或確定狀態</dd><dt>可採取動作</dt><dd>補充證據、確認關聯、駁回關聯、標示撤除</dd></dl>
+          <p class="case-note">此原型不提供實際決定按鈕；正式內部操作須留下可稽核事件。</p>
+        </article>
+      </section>
+
+      <section class="updates"><p class="eyebrow">UPDATE LOG</p><h2>更新紀錄</h2><ul><li><time>2026-09-10</time><span>建立私有覆核狀態機與事件稽核欄位。</span></li><li><time>2026-09-10</time><span>建立本機 JFULL 的待覆核比對基礎。</span></li><li><time>2026-09-10</time><span>匯入中選會登記完成名單，狀態為 registered。</span></li></ul></section>
+    </main>
+    <footer>judgment-candidate-db · 僅供流程與介面驗證</footer>
+  </body>
+</html>

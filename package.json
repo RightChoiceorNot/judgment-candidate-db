@@ -13,6 +13,7 @@
     "match:local-jfull": "tsx src/match-local-jfull.ts",
     "review:summary": "tsx src/review-case-summary.ts",
     "review:decide": "tsx src/record-review-decision.ts",
+    "check:prototype": "node --check web/app.js",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck"
   },

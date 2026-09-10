@@ -29,6 +29,7 @@ This repository builds an auditable, updateable, privacy- and legally-risk-aware
 - TypeScript uses ESM (`package.json` has `"type": "module"`) and `npm run typecheck` is the standard static check.
 - The private candidate/review schema contains 19,675 official 115-year completed-registration rows. They are `registered`, not final official candidate lists. Local exact-name scanning created 19,031 private `pending_review` cases; none are confirmed matches or publicly accessible.
 - The private review workflow records every manual decision with its prior status, reviewer, timestamp, reason, and optional evidence source. No manual decisions or review events have been recorded yet. Use the restricted `review:decide` backend command only after a reviewer has made a documented decision for a specific case.
+- The fixture-only frontend prototype is under `web/`. It has no database connection, no secrets, no real personal data, and is not deployed.
 
 ## Phases
 

@@ -8,6 +8,8 @@
     "check:pipeline": "tsx src/check-pipeline-quality.ts",
     "plan:historical-months": "tsx src/plan-historical-months.ts",
     "test": "tsx --test src/**/*.test.ts",
+    "preview:cec-registration": "python scripts/parse_cec_registration.py",
+    "import:cec-registration": "tsx src/import-cec-candidate-registration.ts",
     "typecheck": "tsc --noEmit",
     "check": "npm run typecheck"
   },

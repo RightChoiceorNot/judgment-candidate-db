@@ -84,4 +84,4 @@ The current pipeline uses the Judicial Yuan Open Data catalog under category `05
 
 ## Development status
 
-Phase 2 pipeline quality checks are deployed. Phase 3 local-only matching utilities are under development; they operate on `JFULL` in memory and never upload full text. The database contains no candidate rows. Do not import real candidate data or provide public access without explicit approval.
+The private database contains 19,675 rows from the CEC's 115-year completed-registration summary PDFs. Every row is `registered`, not `officially_listed`; no review cases have been created. Phase 3 local-only matching utilities operate on `JFULL` in memory and never upload full text. Do not provide public access without explicit approval.

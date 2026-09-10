@@ -8,7 +8,7 @@
 
 目前最可行的全國性來源是中選會 2026-09-07 發布的 [115 年候選人登記彙總表](https://web.cec.gov.tw/central/article/64709)。它不是「僅有登記人數」的一張統計表：頁面按九種選舉提供獨立 PDF，檔案大小隨預期候選人數顯著增加，村里長檔為 7,284 KB。因此可合理判定其設計目的為逐筆候選人登記資料的彙整，而非單純件數統計。
 
-不過，這個判定尚未取代附件欄位核對。調查環境對 `web.cec.gov.tw/api/file/...pdf` 端點回報瀏覽器封鎖，未能讀取 PDF 內容；所以姓名、選區、政黨、登記日期等欄名均標為待核對，不能據此直接寫入資料庫。正式公告名單與選舉公報尚未到預定公告時間，不能把本頁稱為最終名單。
+附件已於使用者核准後下載並在本機抽取。九份逐筆登記表均有 `選舉區、登記日期、姓名、推薦之政黨、備註` 五欄，共 19,675 列；四份「政黨推薦候選人登記情形」附件為人數統計，未匯入。每一逐筆列保存 PDF SHA-256、檔名、頁碼、公告 URL、公告日與抓取時間。正式公告名單與選舉公報尚未到預定公告時間，不能把本頁稱為最終名單。
 
 ## 官方來源盤點
 
@@ -33,13 +33,13 @@
 
 | 選舉種類 | 附件 | 格式／大小 | 欄位與可解析性 |
 | --- | --- | --- | --- |
-| 直轄市長 | [1-1](https://web.cec.gov.tw/api/file/bb9a8d7a-9b8a-41ec-8e23-33efd009385a.pdf) | PDF，62 KB | 逐筆登記資料的高度可能來源；欄名待預覽核對 |
+| 直轄市長 | [1-1](https://web.cec.gov.tw/api/file/bb9a8d7a-9b8a-41ec-8e23-33efd009385a.pdf) | PDF，62 KB，23 列 | 五欄已核對 |
 | 直轄市長政黨推薦 | [1-2](https://web.cec.gov.tw/api/file/ca219c05-fa5d-4706-af53-b214cd8c861f.pdf) | PDF，54 KB | 推薦關係補充來源；不得單獨建立候選人 |
-| 直轄市議員 | [2-1](https://web.cec.gov.tw/api/file/ccd7e51a-5fd0-4ea0-a81b-a120cd550c9c.pdf) | PDF，400 KB | 預期含選區／姓名等；欄名待核對 |
+| 直轄市議員 | [2-1](https://web.cec.gov.tw/api/file/ccd7e51a-5fd0-4ea0-a81b-a120cd550c9c.pdf) | PDF，400 KB，610 列 | 五欄已核對 |
 | 直轄市議員政黨推薦 | [2-2](https://web.cec.gov.tw/api/file/7a8eb38b-76c3-41c1-9d54-0dd55951a182.pdf) | PDF，191 KB | 推薦關係補充來源；欄名待核對 |
-| 縣市長 | [3-1](https://web.cec.gov.tw/api/file/370f3bbf-6408-4fdc-b8d8-9b9214913f74.pdf) | PDF，86 KB | 預期含縣市／姓名等；欄名待核對 |
+| 縣市長 | [3-1](https://web.cec.gov.tw/api/file/370f3bbf-6408-4fdc-b8d8-9b9214913f74.pdf) | PDF，86 KB，58 列 | 五欄已核對 |
 | 縣市長政黨推薦 | [3-2](https://web.cec.gov.tw/api/file/e3bc1f62-bfb5-4e42-8853-7389c4aee159.pdf) | PDF，60 KB | 推薦關係補充來源；欄名待核對 |
-| 縣市議員 | [4-1](https://web.cec.gov.tw/api/file/4c21eb95-a032-4ccc-bdf4-fd1bca1ce4d7.pdf) | PDF，609 KB | 預期含選區／姓名等；欄名待核對 |
+| 縣市議員 | [4-1](https://web.cec.gov.tw/api/file/4c21eb95-a032-4ccc-bdf4-fd1bca1ce4d7) | PDF，609 KB，892 列 | 五欄已核對 |
 | 縣市議員政黨推薦 | [4-2](https://web.cec.gov.tw/api/file/4d195d02-a8a4-4a4e-9dcb-05f68ce285a5.pdf) | PDF，256 KB | 推薦關係補充來源；欄名待核對 |
 | 山地原住民區長 | [5](https://web.cec.gov.tw/api/file/1278f66e-1d15-4ecf-aeeb-9ea5cba61f00.pdf) | PDF，58 KB | 預期含行政區／姓名等；欄名待核對 |
 | 山地原住民區民代表 | [6](https://web.cec.gov.tw/api/file/f3b665f2-6f0b-485f-a1eb-17d152849317.pdf) | PDF，109 KB | 預期含選區／姓名等；欄名待核對 |

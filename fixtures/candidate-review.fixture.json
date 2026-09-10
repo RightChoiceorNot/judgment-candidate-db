@@ -1,0 +1,31 @@
+{
+  "electionCycle": {
+    "cycleName": "fixture-local-election-2099",
+    "electionType": "fixture",
+    "officialSourceUrl": "https://example.invalid/fixture-election"
+  },
+  "candidates": [
+    {
+      "fullName": "測試甲",
+      "normalizedName": "測試甲",
+      "aliases": ["甲測試"],
+      "candidacy": {
+        "electionType": "fixture",
+        "district": "測試選區",
+        "partyName": "測試政黨",
+        "candidateStatus": "pending_verification"
+      }
+    },
+    {
+      "fullName": "測試乙",
+      "normalizedName": "測試乙",
+      "aliases": [],
+      "candidacy": {
+        "electionType": "fixture",
+        "district": "測試選區",
+        "candidateStatus": "pending_verification"
+      }
+    }
+  ],
+  "note": "This fixture is synthetic. Do not replace it with real candidate data without explicit approval."
+}

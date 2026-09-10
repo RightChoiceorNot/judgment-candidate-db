@@ -61,6 +61,12 @@ npm.cmd run typecheck
 # This writes an audit run; it does not delete judgments.
 npm.cmd run reconcile:deletions
 
+# Run source/index/withdrawal integrity checks
+npm.cmd run check:pipeline
+
+# List month/fileset priorities and known size estimates; it never downloads files
+npm.cmd run plan:historical-months
+
 # Inspect a locally downloaded month without uploading text
 npx.cmd tsx src/summarize-criminal-month.ts
 npx.cmd tsx src/estimate-criminal-month-size.ts
